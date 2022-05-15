@@ -1,12 +1,8 @@
-import React from 'react';
+import { React } from 'react';
 import { ChakraProvider, theme, Text, Container } from '@chakra-ui/react';
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import { ApolloProvider } from '@apollo/client';
 import SearchInput from './components/SearchInput';
-
-const client = new ApolloClient({
-  uri: 'https://48p1r2roz4.sse.codesandbox.io',
-  cache: new InMemoryCache(),
-});
+import { client } from './services/countries';
 
 function App() {
   return (
