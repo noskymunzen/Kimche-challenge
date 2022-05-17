@@ -17,7 +17,7 @@ const ButtonGroup = (props) => {
                 }
                 onClick={(e) => props.onClick(option.value)}
               >
-                {option.value}
+                {option.field}
               </Button>
             </WrapItem>
           ))}

@@ -12,8 +12,8 @@ function App() {
   const [input, setInput] = useState('');
 
   const options = [
-    { value: 'continent', color: 'pink.600' },
-    { value: 'language', color: 'purple.300' },
+    { field: 'Continent', value: 'continent', color: 'pink.600' },
+    { field: 'Language', value: 'language', color: 'purple.300' },
   ];
 
   const onClickOption = (option) => setSelectedOption(option);
