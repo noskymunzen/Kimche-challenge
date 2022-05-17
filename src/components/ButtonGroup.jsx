@@ -4,12 +4,12 @@ const ButtonGroup = (props) => {
   return (
     <Box display="flex" alignItems="baseline">
       <Text mr="3" textColor="white">
-        Group By:{' '}
+        Group By:
       </Text>
       <Stack direction="column">
         <Wrap spacing={4}>
           {props.options.map((option) => (
-            <WrapItem key={option}>
+            <WrapItem key={option.value}>
               <Button
                 color={option.color}
                 variant={
