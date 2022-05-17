@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ChakraProvider, theme, Text, Box } from '@chakra-ui/react';
+import { Text, Box, Grid, Badge } from '@chakra-ui/react';
 import { useQuery } from '@apollo/client';
 import { GET_COUNTRIES } from '../services/countries';
 import { groupBy } from '../helpers/array.helpers';
@@ -10,6 +10,7 @@ const GroupViewer = (props) => {
   const [groupedCountries, setGroupedCountries] = useState({});
 
   const { data, loading, error } = useQuery(GET_COUNTRIES);
+
   useEffect(() => {
     if (!data || !data.countries) {
       return;
@@ -25,16 +26,23 @@ const GroupViewer = (props) => {
   if (error) return `Error! ${error.message}`;
 
   return (
-    <>
+    <Grid templateColumns="repeat(3, 1fr)" gap={5}>
       {Object.keys(groupedCountries).map((groupName) => (
-        <Box key={groupName}>
-          <Text>{groupName}</Text>
+        <Box my="7" key={groupName}>
+          <Badge as="text" fontSize="15px" mb="2">
+            {groupName}
+          </Badge>
           {groupedCountries[groupName].map((country) => (
-            <Card name={country.name} />
+            <Card
+              name={country.name}
+              capital={country.capital}
+              emoji={country.emoji}
+              languages={country.languages}
+            />
           ))}
         </Box>
       ))}
-    </>
+    </Grid>
   );
 };
 
