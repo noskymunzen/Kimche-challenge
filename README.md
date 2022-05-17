@@ -20,7 +20,7 @@ Simple Country Search App using:
 - Implementar un servicio de colas para paralelizar inserción de datos con diferentes procesos
 - A lo anterior se le puede sumar utilizar algún servicio Serverless, para ejecutar procesos por demanda sin coste de servidor, solo de proceso
 
-## Distrubuir
+## Distribuir
 
 - Escalar horizontalmente (aumentar-disminuir dinamicamente la cantidad de servidores de base de datos). Hay servicios como AWS Aurora que proveen un gestor similar a MySQL y proveen esta capacidad (elasticidad según demanda)
 - Con lo anterior, varios servidores resuelven el servicio de base de datos
