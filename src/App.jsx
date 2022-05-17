@@ -11,9 +11,14 @@ function App() {
   const [selectedOption, setSelectedOption] = useState('continent');
   const [input, setInput] = useState('');
 
+  /**
+   * ButtonGroup options config
+   *
+   *@type Array<Record<string, string>>
+   */
   const options = [
-    { field: 'Continent', value: 'continent', color: 'pink.600' },
-    { field: 'Language', value: 'language', color: 'purple.300' },
+    { field: '⛰️ Continent', value: 'continent', color: 'pink.600' },
+    { field: '💬 Language', value: 'language', color: 'purple.300' },
   ];
 
   const onClickOption = (option) => setSelectedOption(option);

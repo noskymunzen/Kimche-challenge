@@ -20,7 +20,7 @@ const Card = (props) => {
         </Box>
         <Text>Languages:</Text>
         {props.languages.map((language) => (
-          <Badge mr="2" colorScheme="purple">
+          <Badge key={language.name} mr="2" colorScheme="purple">
             {language.name}
           </Badge>
         ))}
