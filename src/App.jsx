@@ -1,18 +1,19 @@
 import { React, useState } from 'react';
-import { ChakraProvider, theme, Text, Container } from '@chakra-ui/react';
+import { ChakraProvider, theme, Text, Box } from '@chakra-ui/react';
 import { ApolloProvider } from '@apollo/client';
 import SearchInput from './components/SearchInput';
 import ButtonGroup from './components/ButtonGroup';
 import GroupViewer from './components/GroupViewer';
 import { client } from './services/countries';
+import './index.css';
 
 function App() {
   const [selectedOption, setSelectedOption] = useState('continent');
   const [input, setInput] = useState('');
 
   const options = [
-    { value: 'continent', color: 'blue' },
-    { value: 'language', color: 'orange' },
+    { value: 'continent', color: 'pink.600' },
+    { value: 'language', color: 'purple.300' },
   ];
 
   const onClickOption = (option) => setSelectedOption(option);
@@ -20,16 +21,20 @@ function App() {
   return (
     <ChakraProvider theme={theme}>
       <ApolloProvider client={client}>
-        <Container>
-          <Text>Country Search</Text>
-          <SearchInput setInput={setInput} input={input} />
-          <ButtonGroup
-            options={options}
-            selectedOption={selectedOption}
-            onClick={onClickOption}
-          />
+        <Box px="200px">
+          <Box mt="3">
+            <Text textColor="white" fontSize="5xl">
+              Country Search 🗺️
+            </Text>
+            <SearchInput setInput={setInput} input={input} />
+            <ButtonGroup
+              options={options}
+              selectedOption={selectedOption}
+              onClick={onClickOption}
+            />
+          </Box>
           <GroupViewer search={input} group={selectedOption} />
-        </Container>
+        </Box>
       </ApolloProvider>
     </ChakraProvider>
   );
