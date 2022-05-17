@@ -1,5 +1,13 @@
 import { useState, useEffect } from 'react';
-import { Text, Box, Grid, Badge } from '@chakra-ui/react';
+import {
+  Box,
+  Grid,
+  Badge,
+  Alert,
+  AlertDescription,
+  AlertTitle,
+  AlertIcon,
+} from '@chakra-ui/react';
 import { useQuery } from '@apollo/client';
 import { GET_COUNTRIES } from '../services/countries';
 import { groupBy } from '../helpers/array.helpers';
@@ -15,25 +23,33 @@ const GroupViewer = (props) => {
     if (!data || !data.countries) {
       return;
     }
-    const filtered = data.countries.filter((country) =>
-      country.name.toLowerCase().includes(props.search.toLowerCase())
-    );
-    console.log(filtered, data.countries, props);
+    const compareSearchName = (country) =>
+      country.name.toLowerCase().includes(props.search.toLowerCase());
+
+    const filtered = data.countries.filter(compareSearchName);
+
     setGroupedCountries(groupBy(filtered, GROUPS[props.group]));
   }, [data, props.search, props.group]);
 
   if (loading) return 'Loading...';
-  if (error) return `Error! ${error.message}`;
-
+  if (error)
+    return (
+      <Alert mt="7" status="error">
+        <AlertIcon />
+        <AlertTitle>API response Error!</AlertTitle>
+        <AlertDescription>{error.message}</AlertDescription>
+      </Alert>
+    );
   return (
     <Grid templateColumns="repeat(3, 1fr)" gap={5}>
       {Object.keys(groupedCountries).map((groupName) => (
         <Box my="7" key={groupName}>
-          <Badge as="text" fontSize="15px" mb="2">
+          <Badge fontSize="15px" mb="2">
             {groupName}
           </Badge>
           {groupedCountries[groupName].map((country) => (
             <Card
+              key={country.name}
               name={country.name}
               capital={country.capital}
               emoji={country.emoji}
