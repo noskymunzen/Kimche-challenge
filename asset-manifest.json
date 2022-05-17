@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Kimche-challenge/static/css/main.66481352.css",
+    "main.js": "/Kimche-challenge/static/js/main.87671b1e.js",
+    "index.html": "/Kimche-challenge/index.html",
+    "main.66481352.css.map": "/Kimche-challenge/static/css/main.66481352.css.map",
+    "main.87671b1e.js.map": "/Kimche-challenge/static/js/main.87671b1e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.66481352.css",
+    "static/js/main.87671b1e.js"
+  ]
+}
