@@ -22,7 +22,7 @@ Simple Country Search App using:
 
 ## Distribuir
 
-- Escalar horizontalmente (aumentar-disminuir dinamicamente la cantidad de servidores de base de datos). Hay servicios como AWS Aurora que proveen un gestor similar a MySQL y proveen esta capacidad (elasticidad según demanda)
+- Escalar horizontalmente (aumentar-disminuir dinámicamente la cantidad de servidores de base de datos). Hay servicios como AWS Aurora que proveen un gestor similar a MySQL y proveen esta capacidad (elasticidad según demanda)
 - Con lo anterior, varios servidores resuelven el servicio de base de datos
 
 ## Agrupar
