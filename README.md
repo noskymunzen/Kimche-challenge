@@ -1,7 +1,7 @@
 # Kimche Challenge
 
 - Applicant name: Ninoska Münzenmayer
-- App link:
+- App link: https://noskymunzen.github.io/Kimche-challenge
 
 Simple Country Search App using:
 
