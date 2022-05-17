@@ -1,3 +1,10 @@
+/**
+ * groupBy - aggregates items by key using passed callback
+ *
+ *@param {Array} array to group
+ *@param {Function} cb Callback to get key per item
+ *@returns {Record<string, Array>} groups of items
+ */
 export const groupBy = (array, cb) => {
   const groups = {};
 
